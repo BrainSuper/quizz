@@ -1,0 +1,48 @@
+.app__wrapper {
+
+    margin: 200px auto 0;
+    width: 800px;
+}
+.hello {
+    width: 400px;
+    padding: 5px;
+margin: 0 auto;
+    border: 2px solid blueviolet;
+    border-radius: 5px;
+
+    font-size: 25px;
+    color: #42164b;
+    text-align: center;
+}
+.hello div {
+    width: 197px;
+
+    margin: 0 auto;
+}
+.hello span {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+.categories {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto 0;
+    width: 800px;
+}
+.categories a, .categories div {
+    display: block;
+    width: 20%;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid crimson;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #f8ffd6;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease-in;
+}
+
+.categories a:hover {
+    transform: scale(1.1);
+}

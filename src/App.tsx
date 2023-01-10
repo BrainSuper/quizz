@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {FC, useEffect} from 'react';
 import './App.css';
+import {useDispatch} from "react-redux";
+import {getQuizzes} from "./redux/thunk-creators";
+import {Dispatch} from "redux";
+import WelcomeCategories from "./components/WelcomeCategories";
+import {useNavigate, Routes, Route} from "react-router-dom"
+import Questions from "./components/Questions";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App: FC = () => {
+    const dispatch: Dispatch<any> = useDispatch();
+    const navigate = useNavigate();
+    useEffect(() => {
+        navigate('welcome');
+    }, [])
+    return (
+        <div className="App">
+            <Routes>
+                <Route path={'/welcome'} element={<WelcomeCategories/>}/>
+                <Route path={'/questions'} element={<Questions/>}/>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
